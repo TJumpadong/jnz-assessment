@@ -1,0 +1,14 @@
+{
+  "name": "jnz-assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:TJumpadong/jnz-assessment.git",
+  "author": "Teerawit Jumpadong <tjumpadong@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

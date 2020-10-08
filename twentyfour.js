@@ -1,5 +1,5 @@
-const readline = require('readline')
-const assert = require('assert')
+// const readline = require('readline')
+// const assert = require('assert')
 
 // return list of determinate calculation
 // [a + b, a * b, a - b, a / b, a - b, a / b]
@@ -81,7 +81,25 @@ const isPossibleToSolve = numbers => {
   return isSolvedByOrdering(numbers) || isSolvedByGrouping(numbers)
 }
 
-// read user input
+const calculate = line => {
+  const rawInputList = line.trim().replace(/\s+/g, ' ')
+
+  if (/[1-9] [1-9] [1-9] [1-9]/.test(rawInputList)) {
+    const numbers = rawInputList.split(' ').map(number => parseInt(number, 10))
+
+    const isSolved = isPossibleToSolve(numbers)
+    return isSolved
+  }
+
+  return 'Invalid format'
+}
+
+module.exports = {
+  calculate
+}
+
+// read user input via command line
+/*
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -102,6 +120,7 @@ rl.question('Please enter 4 digits (1-9) separated by spaces: ', line => {
   rl.close()
 })
 
+*/
 // testing data
 /*
 assert(isPossibleToSolve([1, 1, 5, 8]))
